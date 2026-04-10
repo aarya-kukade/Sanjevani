@@ -325,22 +325,40 @@ Patient's symptoms: ${symptoms}`;
 
   try {
     let res;
+    let lastStatus = 0;
+    const maxAttempts = 5;
+    const baseDelay = 1000; // 1s
+    let success = false;
     for (const model of GEMINI_MODELS) {
-      res = await fetch(geminiUrl(model), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            responseMimeType: "application/json",
-            temperature: 0.2,
-          },
-        }),
-      });
-      if (res.ok) break;
+      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        res = await fetch(geminiUrl(model), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              responseMimeType: "application/json",
+              temperature: 0.2,
+            },
+          }),
+        });
+        lastStatus = res.status;
+        if (res.ok) {
+          success = true;
+          break;
+        }
+        if (res.status === 429 && attempt < maxAttempts) {
+          // Exponential backoff
+          await new Promise(r => setTimeout(r, baseDelay * Math.pow(2, attempt - 1)));
+          continue;
+        } else {
+          break;
+        }
+      }
+      if (success) break;
     }
 
-    if (!res.ok) throw new Error(`API error: ${res.status}`);
+    if (!res || !res.ok) throw new Error(`API error: ${lastStatus}`);
 
     const data = await res.json();
 
