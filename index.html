@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjeevani - Hospital Bed Availability System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>🏥 Sanjeevani</h1>
+      <p class="subtitle">Real-time hospital bed tracking &amp; AI-powered symptom analysis</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- GPS Status Banner -->
+    <div id="gps-banner" class="gps-banner gps-locating">
+      <span id="gps-icon" class="gps-icon">📡</span>
+      <span id="gps-text">Detecting your location...</span>
+      <button id="gps-retry" class="btn btn-sm btn-outline hidden">Retry Location</button>
+    </div>
+
+    <!-- Search / Filter Section -->
+    <section class="search-section" aria-label="Search hospitals">
+      <h2>Search Available Beds</h2>
+      <div class="search-controls">
+        <div class="control-group">
+          <label for="bed-type">Bed Type</label>
+          <select id="bed-type">
+            <option value="all">All Types</option>
+            <option value="icu">ICU</option>
+            <option value="general">General</option>
+            <option value="emergency">Emergency</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" placeholder="e.g., Delhi, Bandra, Pune..." />
+        </div>
+        <button id="search-btn" class="btn btn-primary">
+          <span class="btn-text">🔍 Search</span>
+          <span class="btn-spinner hidden"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- AI Symptom Analysis Section -->
+    <section class="ai-section" aria-label="AI symptom analysis">
+      <h2>🧠 Find Hospital Based on Symptoms</h2>
+      <p class="ai-description">Describe your symptoms and our AI will recommend the appropriate bed type and hospitals near you.</p>
+      <div class="ai-input-group">
+        <label for="symptom-input">Describe your symptoms</label>
+        <textarea
+          id="symptom-input"
+          rows="4"
+          placeholder="e.g., high fever, breathing difficulty, chest pain..."
+          aria-describedby="symptom-help"
+        ></textarea>
+        <small id="symptom-help">Be as descriptive as possible for accurate recommendations.</small>
+      </div>
+      <button id="analyze-btn" class="btn btn-ai">
+        <span class="btn-text">🧠 Analyze Symptoms</span>
+        <span class="btn-spinner hidden"></span>
+      </button>
+
+      <!-- AI Loading State -->
+      <div id="ai-loading" class="ai-loading hidden">
+        <div class="pulse-loader"></div>
+        <p>Analyzing symptoms using AI...</p>
+      </div>
+
+      <!-- AI Result Card -->
+      <div id="ai-result" class="ai-result hidden" role="alert">
+        <div class="ai-result-header">
+          <span class="ai-badge">🧠 AI Recommendation</span>
+        </div>
+        <div class="ai-result-body">
+          <h3 id="ai-bed-type"></h3>
+          <p id="ai-explanation"></p>
+          <div id="ai-remedy" class="ai-remedy hidden"></div>
+        </div>
+        <button id="ai-apply-btn" class="btn btn-primary btn-sm">Apply Filter &amp; View Hospitals ↓</button>
+      </div>
+
+      <!-- AI Error -->
+      <div id="ai-error" class="ai-error hidden" role="alert">
+        <p>⚠️ <span id="ai-error-msg"></span></p>
+      </div>
+    </section>
+
+    <!-- Hospital List Section -->
+    <section class="hospital-section" id="hospital-section" aria-label="Hospital list">
+      <h2>🏥 Hospitals Near You</h2>
+
+      <!-- Loading Spinner -->
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Fetching hospital data...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">🛏️</div>
+        <h3>No Beds Available</h3>
+        <p>No hospitals match your current filters. Try broadening your search.</p>
+      </div>
+
+      <!-- Hospital Cards Grid -->
+      <div id="hospital-grid" class="hospital-grid"></div>
+    </section>
+  </main>
+
+  <!-- Detail Modal -->
+  <div id="detail-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sanjeevani. Real hospital data powered by OpenStreetMap. Bed counts are simulated.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
