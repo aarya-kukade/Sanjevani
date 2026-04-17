@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjeevani - Global Healthcare Network</title>
+  <link rel="stylesheet" href="home-styles.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="aurora-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <span class="brand-icon">🏥</span>
+        <span class="brand-text">Sanjeevani</span>
+      </div>
+      
+      <ul class="nav-menu">
+        <li><a href="home.html" class="nav-link active">Home</a></li>
+        <li><a href="features.html" class="nav-link">Features</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Canvas Background -->
+  <section id="home" class="hero">
+    <canvas id="globe-canvas" class="globe-canvas"></canvas>
+    
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>Global Healthcare Network</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Connect
+          <span class="gradient-text">the World</span>
+          <br>
+          <span class="subtitle-text">Through Health</span>
+        </h1>
+        
+        <p class="hero-description">
+          Experience real-time global healthcare connectivity with our distributed network infrastructure. 
+          Monitor bed availability, track patient data, and scale across continents with unprecedented reliability.
+        </p>
+        
+        <div class="hero-buttons">
+          <button class="btn btn-primary" id="explore-btn">
+            <span>Start Exploring</span>
+            <span class="arrow">→</span>
+          </button>
+          <button class="btn btn-secondary" id="demo-btn">
+            <span>⚡ View Live Demo</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">150+</div>
+          <div class="stat-label">Partner Hospitals</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+    </div>
+  </section>
+
+  <!-- Features Section Preview -->
+  <section id="features" class="features">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <a href="features.html" class="btn btn-secondary" style="display: inline-block;">
+          View All Features →
+        </a>
+      </div>
+      <h2 class="section-title">Powerful Features</h2>
+      <p class="section-subtitle">Everything you need for seamless healthcare coordination</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Network</h3>
+          <p>Real-time connectivity across all partner hospitals worldwide. Track beds instantly.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>AI-Powered Matching</h3>
+          <p>Intelligent symptom analysis to find the best hospital match for patient needs.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>GPS Tracking</h3>
+          <p>Locate nearby hospitals instantly with real-time distance and direction guidance.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Real-Time Analytics</h3>
+          <p>Live dashboard showing bed availability, utilization rates, and hospital metrics.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Data</h3>
+          <p>HIPAA-compliant encryption ensures patient privacy and data protection.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Sub-second response times with global CDN infrastructure and edge computing.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="features.html" class="btn btn-primary" style="display: inline-block;">
+          View All Features →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Sanjeevani</h2>
+          <p>
+            Sanjeevani is a revolutionary healthcare management platform designed to solve one of the most critical problems in modern healthcare: bed availability and patient allocation.
+          </p>
+          <p>
+            By combining AI-powered symptom analysis, real-time GPS tracking, and a global network of partner hospitals, we ensure that every patient gets the care they need, when they need it.
+          </p>
+          <p>
+            Our mission is to bridge the gap between patients in need and the healthcare resources available to them, saving lives through technology and innovation.
+          </p>
+          
+          <div class="about-cta">
+            <button class="btn btn-primary" id="about-cta-btn">
+              <span>Experience Sanjeevani</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="about-features">
+          <div class="about-feature">
+            <span class="about-feature-icon">✓</span>
+            <span>Real-time bed tracking</span>
+          </div>
+          <div class="about-feature">
+            <span class="about-feature-icon">✓</span>
+            <span>AI symptom analysis</span>
+          </div>
+          <div class="about-feature">
+            <span class="about-feature-icon">✓</span>
+            <span>GPS-based location</span>
+          </div>
+          <div class="about-feature">
+            <span class="about-feature-icon">✓</span>
+            <span>Multi-hospital network</span>
+          </div>
+          <div class="about-feature">
+            <span class="about-feature-icon">✓</span>
+            <span>Instant notifications</span>
+          </div>
+          <div class="about-feature">
+            <span class="about-feature-icon">✓</span>
+            <span>24/7 support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact/CTA Section -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <h2>Ready to Transform Healthcare?</h2>
+      <p>Join us in revolutionizing how hospitals and patients connect</p>
+      
+      <div class="cta-buttons">
+        <button class="btn btn-primary btn-large" id="cta-explore-btn">
+          <span>Start Your Journey</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="btn btn-secondary btn-large" id="cta-demo-btn">
+          <span>Schedule Demo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>Sanjeevani</h3>
+          <p>Connecting patients with healthcare, globally.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sanjeevani. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for redirect confirmation -->
+  <div id="redirect-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Navigate to Sanjeevani App</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>You will be redirected to the Sanjeevani hospital bed tracking system with the interactive globe experience.</p>
+        <p class="modal-note">Make sure the app server is running on http://localhost:3000</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-cancel">Cancel</button>
+        <button class="btn btn-primary" id="modal-confirm">
+          <span>Continue</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="home-script.js"></script>
+</body>
+</html>

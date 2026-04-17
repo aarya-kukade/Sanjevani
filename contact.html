@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Sanjeevani</title>
+  <link rel="stylesheet" href="home-styles.css" />
+  <link rel="stylesheet" href="pages-styles.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="aurora-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand" onclick="window.location.href='home.html';">
+        <span class="brand-icon">🏥</span>
+        <span class="brand-text">Sanjeevani</span>
+      </div>
+      
+      <ul class="nav-menu">
+        <li><a href="home.html" class="nav-link">Home</a></li>
+        <li><a href="features.html" class="nav-link">Features</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-hero contact-hero">
+    <div class="page-hero-content">
+      <div class="page-badge">
+        <span class="badge-dot"></span>
+        <span>Get In Touch</span>
+      </div>
+      
+      <h1 class="page-title">
+        Let's
+        <span class="gradient-text">Connect</span>
+      </h1>
+      
+      <p class="page-description">
+        Have questions about Sanjeevani? We'd love to hear from you. Our team is here to help.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Information -->
+  <section class="contact-info-section">
+    <div class="container">
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <div class="contact-icon">📞</div>
+          <h3>Phone Support</h3>
+          <p>Call us during business hours</p>
+          <a href="tel:+911234567890" class="contact-link">+91 (123) 456-7890</a>
+          <p class="contact-hours">Mon - Fri: 9AM - 6PM IST</p>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon">📧</div>
+          <h3>Email Support</h3>
+          <p>We'll respond within 24 hours</p>
+          <a href="mailto:support@sanjeevani.health" class="contact-link">support@sanjeevani.health</a>
+          <a href="mailto:sales@sanjeevani.health" class="contact-link">sales@sanjeevani.health</a>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon">📍</div>
+          <h3>Headquarters</h3>
+          <p>Innovation Hub, Mumbai</p>
+          <address class="contact-address">
+            123 Healthcare Avenue<br>
+            Mumbai, MH 400001<br>
+            India
+          </address>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon">💬</div>
+          <h3>Live Chat</h3>
+          <p>Chat with our team anytime</p>
+          <button class="contact-link btn-link">Start Live Chat</button>
+          <p class="contact-hours">24/7 Available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="contact-form-wrapper">
+        <div class="form-header">
+          <h2>Send us a Message</h2>
+          <p>Fill out the form below and we'll get back to you as soon as possible</p>
+        </div>
+
+        <form class="contact-form" id="contact-form" onsubmit="handleContactForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 (123) 456-7890">
+            </div>
+            <div class="form-group">
+              <label for="hospital">Hospital / Organization</label>
+              <input type="text" id="hospital" name="hospital" placeholder="Your hospital name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="demo">Schedule a Demo</option>
+              <option value="sales">Sales Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="partnership">Partnership Opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help..."></textarea>
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">I agree to the privacy policy and terms of service</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large">
+            <span>Send Message</span>
+            <span class="arrow">→</span>
+          </button>
+        </form>
+
+        <div id="form-success" class="form-message hidden">
+          <div class="message-icon">✓</div>
+          <h3>Thank You!</h3>
+          <p>Your message has been sent successfully. Our team will contact you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Find quick answers to common questions</p>
+      
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How long does it take to set up Sanjeevani?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer hidden">
+            <p>Setup typically takes 2-4 weeks depending on your hospital's existing infrastructure. Our implementation team guides you through each step to minimize disruption to your operations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Is Sanjeevani HIPAA compliant?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer hidden">
+            <p>Yes, Sanjeevani is fully HIPAA compliant and ISO 27001 certified. We implement military-grade encryption and strict access controls to protect patient data at all times.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What's the pricing model?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer hidden">
+            <p>We offer flexible pricing based on hospital size and feature requirements. Pricing typically ranges from enterprise plans with custom quotes. Contact our sales team for detailed information.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can we integrate with existing EHR systems?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer hidden">
+            <p>Absolutely! Sanjeevani's API-first architecture allows seamless integration with major EHR systems including Epic, Cerner, and others. Our technical team will handle the integration.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What kind of support do you provide?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer hidden">
+            <p>We provide 24/7 multi-channel support including phone, email, live chat, and documentation. Additionally, we offer dedicated implementation specialists and regular training sessions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can Sanjeevani work for our specific region?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer hidden">
+            <p>Yes! Sanjeevani is deployed globally with servers on multiple continents. We support multi-language and multi-currency configurations. Contact us to discuss your specific requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Transform Your Healthcare Operations?</h2>
+      <p>Let's schedule a personalized demo of Sanjeevani tailored to your hospital's needs</p>
+      
+      <div class="cta-buttons">
+        <button class="btn btn-primary btn-large" id="demo-btn">
+          <span>Schedule Demo</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="btn btn-secondary btn-large" id="experience-btn">
+          <span>Experience Live App</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>Sanjeevani</h3>
+          <p>Connecting patients with healthcare, globally.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sanjeevani. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Demo Modal -->
+  <div id="demo-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Schedule a Demo</h3>
+        <button class="modal-close" id="modal-close-demo">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="demo-form" onsubmit="handleDemoForm(event)">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Hospital Name *</label>
+            <input type="text" required placeholder="Hospital name">
+          </div>
+          <div class="form-group">
+            <label>Preferred Time *</label>
+            <input type="datetime-local" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-cancel-demo">Cancel</button>
+        <button class="btn btn-primary" onclick="document.getElementById('demo-form').dispatchEvent(new Event('submit'))">
+          <span>Schedule</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Redirect Modal -->
+  <div id="redirect-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Experience Sanjeevani App</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>See Sanjeevani in action with a live interactive demo of the hospital bed tracking and patient allocation system.</p>
+        <p class="modal-note">The app demonstrates real-time bed availability, AI-powered matching, and GPS navigation features.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-cancel">Cancel</button>
+        <button class="btn btn-primary" id="modal-confirm">
+          <span>Launch App</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="pages-script.js"></script>
+  <script>
+    // FAQ Toggle
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const toggle = element.querySelector('.faq-toggle');
+      
+      answer.classList.toggle('hidden');
+      toggle.textContent = answer.classList.contains('hidden') ? '+' : '−';
+    }
+
+    // Contact Form Handler
+    function handleContactForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const successMessage = document.getElementById('form-success');
+      
+      // Reset form
+      form.reset();
+      form.classList.add('hidden');
+      successMessage.classList.remove('hidden');
+      
+      // Reset after 5 seconds
+      setTimeout(() => {
+        successMessage.classList.add('hidden');
+        form.classList.remove('hidden');
+      }, 5000);
+    }
+
+    // Demo Form Handler
+    function handleDemoForm(event) {
+      event.preventDefault();
+      alert('Demo scheduled successfully! Check your email for confirmation.');
+      document.getElementById('demo-modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

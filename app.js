@@ -1,3 +1,76 @@
+/* ===== Aurora Navigation Bar Control ===== */
+document.addEventListener('DOMContentLoaded', function() {
+  // Navigation Elements
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile Menu Toggle
+  if (navToggle) {
+    navToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+  }
+
+  // Close mobile menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      
+      // Add active state to clicked link
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Update active link on scroll
+  window.addEventListener('scroll', function() {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute('id') || '';
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const navValue = link.getAttribute('data-nav');
+      if (current.includes(navValue)) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Smooth scroll behavior for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Offset for fixed navbar
+          window.scrollBy(0, -70);
+        }
+      }
+    });
+  });
+
+  // Add interaction for navbar brand
+  const navbarBrand = document.querySelector('.navbar-brand');
+  if (navbarBrand) {
+    navbarBrand.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+
 /* ===== DOM References ===== */
 const dom = {
   bedType: document.getElementById("bed-type"),

@@ -7,6 +7,30 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Aurora Navigation Bar -->
+  <nav class="aurora-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <span class="brand-icon">🏥</span>
+        <span class="brand-text">Sanjeevani</span>
+      </div>
+      
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="#search" class="nav-link" data-nav="search">Search Beds</a></li>
+        <li><a href="#ai-analysis" class="nav-link" data-nav="analysis">AI Analysis</a></li>
+        <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
   <!-- Header -->
   <header class="header">
     <div class="container">
@@ -24,7 +48,7 @@
     </div>
 
     <!-- Search / Filter Section -->
-    <section class="search-section" aria-label="Search hospitals">
+    <section id="search" class="search-section" aria-label="Search hospitals">
       <h2>Search Available Beds</h2>
       <div class="search-controls">
         <div class="control-group">
@@ -48,7 +72,7 @@
     </section>
 
     <!-- AI Symptom Analysis Section -->
-    <section class="ai-section" aria-label="AI symptom analysis">
+    <section id="ai-analysis" class="ai-section" aria-label="AI symptom analysis">
       <h2>🧠 Find Hospital Based on Symptoms</h2>
       <p class="ai-description">Describe your symptoms and our AI will recommend the appropriate bed type and hospitals near you.</p>
       <div class="ai-input-group">

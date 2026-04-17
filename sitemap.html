@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjeevani - Site Map</title>
+  <link rel="stylesheet" href="home-styles.css" />
+  <style>
+    .sitemap-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      margin-top: 70px;
+    }
+
+    .sitemap-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .sitemap-title h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .sitemap-content {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(10, 147, 150, 0.08);
+    }
+
+    .sitemap-level {
+      margin-bottom: 40px;
+    }
+
+    .sitemap-level h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .page-tree {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .page-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      gap: 15px;
+      border-left: 3px solid transparent;
+      padding-left: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .page-item:hover {
+      border-left-color: var(--primary);
+      background: rgba(10, 147, 150, 0.05);
+      padding-left: 20px;
+    }
+
+    .page-icon {
+      font-size: 1.5rem;
+      min-width: 30px;
+    }
+
+    .page-info {
+      flex: 1;
+    }
+
+    .page-name {
+      font-weight: 600;
+      color: var(--text);
+      display: block;
+    }
+
+    .page-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      display: block;
+      margin-top: 3px;
+    }
+
+    .page-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      background: rgba(10, 147, 150, 0.1);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .page-link:hover {
+      background: rgba(10, 147, 150, 0.2);
+      text-decoration: underline;
+    }
+
+    .subpages {
+      margin-left: 40px;
+      margin-top: 15px;
+      padding-left: 20px;
+      border-left: 2px dashed var(--border);
+      display: none;
+    }
+
+    .subpages.show {
+      display: block;
+    }
+
+    .subpage-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      gap: 10px;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .subpage-icon {
+      color: var(--secondary);
+    }
+
+    .flow-diagram {
+      background: linear-gradient(135deg, #f0fffe 0%, #ffffff 100%);
+      border-radius: 15px;
+      padding: 40px;
+      margin-top: 60px;
+      border: 1px solid rgba(10, 147, 150, 0.1);
+    }
+
+    .flow-diagram h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: var(--text);
+    }
+
+    .flow-chart {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+
+    .flow-box {
+      background: white;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      padding: 20px;
+      min-width: 150px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+
+    .flow-arrow {
+      font-size: 2rem;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .stat-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 900;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .sitemap-container {
+        padding: 30px 20px;
+      }
+
+      .sitemap-content {
+        padding: 30px 20px;
+      }
+
+      .flow-chart {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+        margin: 5px 0;
+      }
+
+      .subpages {
+        margin-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="aurora-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand" onclick="window.location.href='home.html';">
+        <span class="brand-icon">🏥</span>
+        <span class="brand-text">Sanjeevani</span>
+      </div>
+      
+      <ul class="nav-menu">
+        <li><a href="home.html" class="nav-link">Home</a></li>
+        <li><a href="features.html" class="nav-link">Features</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sitemap-container">
+    <div class="sitemap-title">
+      <h1>🗺️ Sanjeevani Site Map</h1>
+      <p>Complete navigation structure of the Sanjeevani healthcare platform</p>
+    </div>
+
+    <div class="sitemap-content">
+      <!-- Main Pages -->
+      <div class="sitemap-level">
+        <h2>🏠 Main Pages</h2>
+        <ul class="page-tree">
+          <li class="page-item">
+            <span class="page-icon">🏠</span>
+            <span class="page-info">
+              <span class="page-name">Home</span>
+              <span class="page-desc">Landing page with hero section and feature overview</span>
+            </span>
+            <a href="home.html" class="page-link">Visit →</a>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">⭐</span>
+            <span class="page-info">
+              <span class="page-name">Features</span>
+              <span class="page-desc">18 feature cards across 6 categories with comparison table</span>
+            </span>
+            <a href="features.html" class="page-link">Visit →</a>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">ℹ️</span>
+            <span class="page-info">
+              <span class="page-name">About</span>
+              <span class="page-desc">Company mission, team, timeline, and testimonials</span>
+            </span>
+            <a href="about.html" class="page-link">Visit →</a>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">📞</span>
+            <span class="page-info">
+              <span class="page-name">Contact</span>
+              <span class="page-desc">Contact form, FAQ, and support channels</span>
+            </span>
+            <a href="contact.html" class="page-link">Visit →</a>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">🚀</span>
+            <span class="page-info">
+              <span class="page-name">Hospital Booking App</span>
+              <span class="page-desc">Interactive hospital bed tracking system</span>
+            </span>
+            <a href="start.html" class="page-link">Visit →</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Hub -->
+      <div class="sitemap-level">
+        <h2>🧭 Navigation Hubs</h2>
+        <ul class="page-tree">
+          <li class="page-item">
+            <span class="page-icon">📑</span>
+            <span class="page-info">
+              <span class="page-name">Pages Index</span>
+              <span class="page-desc">Complete overview of all pages with quick navigation</span>
+            </span>
+            <a href="pages-index.html" class="page-link">Visit →</a>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">🗺️</span>
+            <span class="page-info">
+              <span class="page-name">Site Map</span>
+              <span class="page-desc">This page - visual site structure</span>
+            </span>
+            <a href="sitemap.html" class="page-link">Current</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Features on Each Page -->
+      <div class="sitemap-level">
+        <h2>✨ Features By Page</h2>
+        <ul class="page-tree">
+          <li class="page-item">
+            <span class="page-icon">🌍</span>
+            <span class="page-info">
+              <span class="page-name">Global Connectivity</span>
+              <span class="page-desc">3 feature cards + info on features page</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">🧠</span>
+            <span class="page-info">
+              <span class="page-name">AI Intelligence</span>
+              <span class="page-desc">3 feature cards + details on features page</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">📍</span>
+            <span class="page-info">
+              <span class="page-name">Location & Navigation</span>
+              <span class="page-desc">3 feature cards + specs on features page</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">📊</span>
+            <span class="page-info">
+              <span class="page-name">Analytics & Insights</span>
+              <span class="page-desc">3 feature cards + dashboard info on features page</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">🔒</span>
+            <span class="page-info">
+              <span class="page-name">Security & Compliance</span>
+              <span class="page-desc">3 feature cards + certifications on features page</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">⚡</span>
+            <span class="page-info">
+              <span class="page-name">Performance & Speed</span>
+              <span class="page-desc">3 feature cards + metrics on features page</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Features -->
+      <div class="sitemap-level">
+        <h2>📧 Contact Page Features</h2>
+        <ul class="page-tree">
+          <li class="page-item">
+            <span class="page-icon">☎️</span>
+            <span class="page-info">
+              <span class="page-name">Contact Methods</span>
+              <span class="page-desc">Phone, Email, Address, Live Chat</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">📝</span>
+            <span class="page-info">
+              <span class="page-name">Contact Form</span>
+              <span class="page-desc">7 fields with validation and success message</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">❓</span>
+            <span class="page-info">
+              <span class="page-name">FAQ Section</span>
+              <span class="page-desc">6 questions with toggle answers</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">📅</span>
+            <span class="page-info">
+              <span class="page-name">Demo Scheduling</span>
+              <span class="page-desc">Modal form for booking demo</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- About Page Content -->
+      <div class="sitemap-level">
+        <h2>ℹ️ About Page Sections</h2>
+        <ul class="page-tree">
+          <li class="page-item">
+            <span class="page-icon">🎯</span>
+            <span class="page-info">
+              <span class="page-name">Mission & Vision</span>
+              <span class="page-desc">3 cards: Mission, Vision, Values</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">💡</span>
+            <span class="page-info">
+              <span class="page-name">Problem & Solution</span>
+              <span class="page-desc">4 problems + 4-step solution + statistics</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">👥</span>
+            <span class="page-info">
+              <span class="page-name">Leadership Team</span>
+              <span class="page-desc">6 team members with profiles</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">📈</span>
+            <span class="page-info">
+              <span class="page-name">Company Timeline</span>
+              <span class="page-desc">5 major milestones with timeline visual</span>
+            </span>
+          </li>
+
+          <li class="page-item">
+            <span class="page-icon">⭐</span>
+            <span class="page-info">
+              <span class="page-name">Testimonials</span>
+              <span class="page-desc">3 customer testimonials with quotes</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Flow -->
+      <div class="flow-diagram">
+        <h3>🔄 User Navigation Flow</h3>
+        
+        <div class="flow-chart">
+          <div class="flow-box">📄 Entry<br>pages-index.html</div>
+          <div class="flow-arrow">→</div>
+          
+          <div class="flow-box">🏠 Home<br>home.html</div>
+          <div class="flow-arrow">→</div>
+          
+          <div class="flow-box">Select<br>Features/About/Contact</div>
+          <div class="flow-arrow">→</div>
+          
+          <div class="flow-box">View<br>Detailed Pages</div>
+          <div class="flow-arrow">→</div>
+          
+          <div class="flow-box">✅ CTA<br>start.html</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Main Pages</span>
+          </div>
+          
+          <div class="stat-box">
+            <span class="stat-number">18</span>
+            <span class="stat-label">Feature Cards</span>
+          </div>
+          
+          <div class="stat-box">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Team Members</span>
+          </div>
+          
+          <div class="stat-box">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Total Features</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; color: var(--gray);">
+      <p>🗺️ Complete Sanjeevani Site Structure</p>
+      <p style="font-size: 0.9rem; margin-top: 10px;">
+        <a href="pages-index.html" style="color: var(--primary); text-decoration: none; margin: 0 10px;">📑 Pages Index</a> | 
+        <a href="PAGES_GUIDE.md" style="color: var(--primary); text-decoration: none; margin: 0 10px;">📖 Technical Docs</a> |
+        <a href="home.html" style="color: var(--primary); text-decoration: none; margin: 0 10px;">🏠 Home</a>
+      </p>
+      <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.7;">
+        &copy; 2026 Sanjeevani. All rights reserved.
+      </p>
+    </div>
+  </div>
+
+  <script src="home-script.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle) {
+      navToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+    }
+
+    // Close menu on link click
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (navToggle) navToggle.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+      });
+    });
+
+    // Brand click
+    const navbarBrand = document.querySelector('.navbar-brand');
+    if (navbarBrand) {
+      navbarBrand.addEventListener('click', function() {
+        window.location.href = 'home.html';
+      });
+    }
+  </script>
+</body>
+</html>

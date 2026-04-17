@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjeevani - Page Navigation Index</title>
+  <link rel="stylesheet" href="home-styles.css" />
+  <style>
+    .index-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      margin-top: 70px;
+    }
+
+    .index-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .index-header h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .index-header p {
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .page-card {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 15px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .page-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 40px rgba(10, 147, 150, 0.15);
+    }
+
+    .page-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .page-card h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .page-card p {
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .page-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .features-list {
+      background: linear-gradient(135deg, #f0fffe 0%, #ffffff 100%);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .features-list h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-item {
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .feature-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    .tech-info {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .tech-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .tech-stack {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .tech-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .index-container {
+        padding: 40px 20px;
+      }
+
+      .index-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .pages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-list {
+        padding: 25px;
+      }
+
+      .tech-stack {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="aurora-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand" onclick="window.location.href='home.html';">
+        <span class="brand-icon">🏥</span>
+        <span class="brand-text">Sanjeevani</span>
+      </div>
+      
+      <ul class="nav-menu">
+        <li><a href="home.html" class="nav-link">Home</a></li>
+        <li><a href="features.html" class="nav-link">Features</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="index-container">
+    <div class="index-header">
+      <h1>🏥 Sanjeevani Pages Navigation</h1>
+      <p>Complete guide to all pages in the Sanjeevani healthcare platform</p>
+    </div>
+
+    <!-- Pages Grid -->
+    <div class="pages-grid">
+      <div class="page-card" onclick="window.location.href='home.html';">
+        <div class="page-icon">🏠</div>
+        <h2>Home</h2>
+        <p>Main landing page with hero section, features overview, and call-to-action buttons</p>
+        <button class="btn btn-primary">Visit Home</button>
+      </div>
+
+      <div class="page-card" onclick="window.location.href='features.html';">
+        <div class="page-icon">⭐</div>
+        <h2>Features</h2>
+        <p>Comprehensive list of all Sanjeevani features with detailed descriptions and comparison</p>
+        <button class="btn btn-primary">Explore Features</button>
+      </div>
+
+      <div class="page-card" onclick="window.location.href='about.html';">
+        <div class="page-icon">ℹ️</div>
+        <h2>About</h2>
+        <p>Learn about Sanjeevani's mission, team, timeline, and why we're transforming healthcare</p>
+        <button class="btn btn-primary">Learn More</button>
+      </div>
+
+      <div class="page-card" onclick="window.location.href='contact.html';">
+        <div class="page-icon">📞</div>
+        <h2>Contact</h2>
+        <p>Get in touch with our team, access support channels, and schedule a demo</p>
+        <button class="btn btn-primary">Contact Us</button>
+      </div>
+
+      <div class="page-card" onclick="window.location.href='start.html';">
+        <div class="page-icon">🚀</div>
+        <h2>Hospital Booking</h2>
+        <p>Experience the Sanjeevani app with interactive hospital bed tracking and patient allocation</p>
+        <button class="btn btn-primary">Launch App</button>
+      </div>
+
+      <div class="page-card">
+        <div class="page-icon">📖</div>
+        <h2>Documentation</h2>
+        <p>View PAGES_GUIDE.md for complete navigation documentation and technical details</p>
+        <button class="btn btn-secondary">Read Guide</button>
+      </div>
+    </div>
+
+    <!-- Features Overview -->
+    <div class="features-list">
+      <h3>✨ Key Features Across Pages</h3>
+      
+      <div class="feature-row">
+        <div class="feature-item">
+          <h4>🌐 Global Network</h4>
+          <p>Real-time connectivity across partner hospitals worldwide with 99.99% uptime</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>🤖 AI Matching</h4>
+          <p>Intelligent symptom analysis to find the best hospital for patient needs</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>📍 GPS Tracking</h4>
+          <p>Location-based routing with turn-by-turn navigation and ambulance dispatch</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>📊 Analytics</h4>
+          <p>Real-time dashboard with bed availability, utilization rates, and insights</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>🔒 Security</h4>
+          <p>HIPAA compliant with end-to-end encryption and role-based access control</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>⚡ Performance</h4>
+          <p>Sub-100ms API response times with global CDN and automatic optimization</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Flow -->
+    <div class="features-list">
+      <h3>🔗 Navigation Flow</h3>
+      
+      <div class="feature-row">
+        <div class="feature-item">
+          <h4>Home Page</h4>
+          <p>• Features link → features.html<br>
+             • About link → about.html<br>
+             • Contact link → contact.html<br>
+             • Start Exploring → start.html</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>Features Page</h4>
+          <p>• Experience Sanjeevani → start.html<br>
+             • Get in Touch → contact.html<br>
+             • Home → home.html<br>
+             • All CTAs → start.html</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>About Page</h4>
+          <p>• Experience Sanjeevani → start.html<br>
+             • Schedule Demo → contact.html<br>
+             • Home → home.html<br>
+             • All CTAs → start.html</p>
+        </div>
+
+        <div class="feature-item">
+          <h4>Contact Page</h4>
+          <p>• Schedule Demo → Demo modal<br>
+             • Experience Live App → start.html<br>
+             • Home → home.html<br>
+             • Contact form submits</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design System -->
+    <div class="tech-info">
+      <h3>🎨 Design System</h3>
+      <p>Consistent Aurora design across all pages with responsive layouts</p>
+      
+      <div class="tech-stack">
+        <span class="tech-badge">🎨 Gradient Backgrounds</span>
+        <span class="tech-badge">✨ Smooth Animations</span>
+        <span class="tech-badge">📱 Responsive Design</span>
+        <span class="tech-badge">🎯 Accessible UI</span>
+        <span class="tech-badge">⚡ Optimized Performance</span>
+      </div>
+    </div>
+
+    <!-- Statistics -->
+    <div style="margin-top: 60px; text-align: center;">
+      <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 30px;">📊 Project Statistics</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px;">
+          <div style="font-size: 2rem; font-weight: 900;">5</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">Main Pages</div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 30px; border-radius: 12px;">
+          <div style="font-size: 2rem; font-weight: 900;">100+</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">Feature Details</div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 30px; border-radius: 12px;">
+          <div style="font-size: 2rem; font-weight: 900;">6</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">Team Members</div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 30px; border-radius: 12px;">
+          <div style="font-size: 2rem; font-weight: 900;">150+</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">Partner Hospitals</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; color: var(--gray);">
+      <p>&copy; 2026 Sanjeevani. Global Healthcare Network. All rights reserved.</p>
+      <p style="font-size: 0.9rem; margin-top: 10px;">
+        <a href="PAGES_GUIDE.md" style="color: var(--primary); text-decoration: none;">📖 View Full Documentation</a> | 
+        <a href="home.html" style="color: var(--primary); text-decoration: none;">🏠 Go to Home</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="home-script.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle) {
+      navToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+    }
+
+    // Close menu on link click
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (navToggle) navToggle.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+      });
+    });
+
+    // Brand click
+    const navbarBrand = document.querySelector('.navbar-brand');
+    if (navbarBrand) {
+      navbarBrand.addEventListener('click', function() {
+        window.location.href = 'home.html';
+      });
+    }
+  </script>
+</body>
+</html>
