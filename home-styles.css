@@ -42,10 +42,10 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(180deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 147, 150, 0.05) 100%);
+  background: linear-gradient(180deg, rgba(92, 212, 198, 0.95) 0%, rgba(10, 147, 150, 0.05) 100%);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 212, 212, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 212, 212, 0.05);
+  border-bottom: 1px solid rgba(31, 39, 47, 0.1);
+  box-shadow: 0 4px 30px rgba(1, 1, 1, 0.878);
 }
 
 .navbar-container {
@@ -64,8 +64,8 @@ body {
   gap: 12px;
   font-weight: 700;
   font-size: 1.5rem;
-  color: #00f5ff;
-  text-decoration: none;
+  color: #0e253e;
+  text-decoration:none;
   cursor: pointer;
   letter-spacing: -0.5px;
 }
@@ -76,11 +76,11 @@ body {
 }
 
 .brand-text {
-  background: linear-gradient(135deg, #00f5ff, #10a688);
+  background: linear-gradient(135deg, #4474da, #45b39d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 800;
+  font-weight: 1500;
 }
 
 .nav-menu {
@@ -90,12 +90,13 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
+  color:#c577e4
 }
 
 .nav-link {
   display: inline-block;
   padding: 10px 20px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -117,7 +118,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #00f5ff;
+  color: #ffffff;
   text-shadow: 0 0 15px rgba(0, 212, 212, 0.8);
 }
 
@@ -126,7 +127,7 @@ body {
 }
 
 .nav-link.active {
-  color: #00f5ff;
+  color: #000000;
   text-shadow: 0 0 20px rgba(0, 212, 212, 1);
 }
 
@@ -547,6 +548,12 @@ body {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: white;
   text-align: center;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .cta h2 {
@@ -593,6 +600,12 @@ body {
   color: white;
   padding: 60px 0 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .footer-content {

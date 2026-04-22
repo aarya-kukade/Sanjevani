@@ -64,7 +64,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -225,7 +225,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #00f5ff;
+  color: #051010;
   text-shadow: 0 0 15px rgba(0, 212, 212, 0.8), 0 0 25px rgba(16, 166, 136, 0.4);
 }
 

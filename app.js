@@ -102,7 +102,7 @@ const dom = {
 };
 
 /* ===== Config ===== */
-const GEMINI_API_KEY = "AIzaSyBgqRVXBE54eAaDzwiM_YOO9j_I0_KU8WQ";
+const GEMINI_API_KEY = "AIzaSyChQeniM0VqCQyFQKW8pve_5unustKUZss";
 const GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.0-flash-lite"];
 function geminiUrl(model) {
   return `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
@@ -193,6 +193,10 @@ function mapsUrl(hospital) {
   return `https://www.google.com/maps/dir/?api=1&destination=${hospital.lat},${hospital.lng}`;
 }
 
+function mapsDetailsUrl(hospital) {
+  return `https://www.google.com/maps/search/${encodeURIComponent(hospital.name)}/@${hospital.lat},${hospital.lng},15z`;
+}
+
 function createHospitalCard(hospital, isNearest) {
   const available = getTotalBeds(hospital) > 0;
   const card = document.createElement("div");
@@ -216,7 +220,7 @@ function createHospitalCard(hospital, isNearest) {
       <span class="hospital-area">📍 ${hospital.area || "Nearby"}${hospital.city ? ", " + hospital.city : ""}</span>
       <div class="card-actions">
         <a href="${mapsUrl(hospital)}" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="Get directions">🗺️ Directions</a>
-        <button class="btn btn-outline btn-sm" data-id="${hospital.id}">View Details</button>
+        <a href="${mapsDetailsUrl(hospital)}" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="View hospital info on Google Maps">View Details</a>
       </div>
     </div>
   `;
@@ -563,10 +567,7 @@ dom.location.addEventListener("keydown", (e) => {
 dom.analyzeBtn.addEventListener("click", analyzeSymptoms);
 dom.aiApplyBtn.addEventListener("click", applyAiFilter);
 
-dom.hospitalGrid.addEventListener("click", (e) => {
-  const btn = e.target.closest("button[data-id]");
-  if (btn) openModal(Number(btn.dataset.id));
-});
+// View Details button now redirects directly to Google Maps (no modal needed)
 
 dom.modalClose.addEventListener("click", closeModal);
 dom.detailModal.addEventListener("click", (e) => {

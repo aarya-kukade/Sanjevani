@@ -1,7 +1,8 @@
 #!/bin/bash
-# Sanjeevani Pages - Quick Start Guide
+# Sanjivani Pages - Quick Start Guide
 
-echo "🏥 SANJEEVANI PAGES - QUICK START GUIDE"
+echo "
+ Sanjivani PAGES - QUICK START GUIDE"
 echo "========================================"
 echo ""
 echo "✅ IMPLEMENTATION COMPLETE!"
@@ -87,5 +88,5 @@ echo ""
 echo "✅ Status: PRODUCTION READY"
 echo "⭐ Quality: Professional Grade"
 echo ""
-echo "🎉 Enjoy your new Sanjeevani pages!"
+echo "🎉 Enjoy your new Sanjivani pages!"
 echo ""

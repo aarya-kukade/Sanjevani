@@ -1,4 +1,4 @@
-# 🎉 Sanjeevani Pages - Complete Implementation Summary
+# 🎉 Sanjivani Pages - Complete Implementation Summary
 
 ## ✅ What Has Been Delivered
 
@@ -51,7 +51,7 @@
   6. Performance & Speed (3 cards)
 
 - **Comparison Table**
-  - Sanjeevani vs Traditional Systems vs Cloud Alternatives
+  - Sanjivani vs Traditional Systems vs Cloud Alternatives
   - 8 key features compared
   - Visual indicators (✓, ✗, △)
 
@@ -61,7 +61,7 @@
 - **Our Solution** (4-step process)
 - **Leadership Team** (6 members with bios)
 - **Company Timeline** (5 major milestones)
-- **Why Choose Sanjeevani** (6 reasons)
+- **Why Choose Sanjivani** (6 reasons)
 - **Customer Testimonials** (3 reviews)
 
 #### Contact (contact.html)
@@ -198,7 +198,7 @@ home.html (Landing)
 ## 📋 File Structure
 
 ```
-Sanjeevani/
+Sanjivani/
 ├── Pages (HTML)
 │   ├── home.html                  (1000+ lines)
 │   ├── features.html              (850+ lines)
@@ -271,7 +271,7 @@ This page shows all sections with quick navigation.
 - Test all links
 
 ### Step 4: Access Hospital App
-- Click "Start Exploring" or "Experience Sanjeevani"
+- Click "Start Exploring" or "Experience Sanjivani"
 - Confirm in modal dialog
 - Redirected to start.html
 
@@ -406,4 +406,5 @@ All pages:
 
 ---
 
-**Congratulations!** Your Sanjeevani pages are ready to serve your healthcare platform! 🏥
+**Congratulations!** Your Sanjivani pages are ready to serve your healthcare platform! 
+

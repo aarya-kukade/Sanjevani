@@ -108,7 +108,7 @@ async function fetchNominatim(lat, lng, radiusMeters) {
 
   try {
     const res = await fetch(url, {
-      headers: { "User-Agent": "SanjeevaniApp/1.0" },
+      headers: { "User-Agent": "SanjivaniApp/1.0" },
       signal: controller.signal,
     });
     clearTimeout(timeoutId);
@@ -197,7 +197,7 @@ function formatAddress(tags) {
 async function geocodeLocation(query) {
   const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`;
   const res = await fetch(url, {
-    headers: { "User-Agent": "SanjeevaniApp/1.0" },
+    headers: { "User-Agent": "SanjivaniApp/1.0" },
   });
   if (!res.ok) throw new Error(`Geocoding failed: HTTP ${res.status}`);
   const results = await res.json();
