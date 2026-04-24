@@ -20,12 +20,51 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files
+app.use(express.static(path.join(__dirname)));
+
+// Serve HTML pages
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'start.html'));
+});
+
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'home.html'));
+});
+
+app.get('/index', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'about.html'));
+});
+
+app.get('/features', (req, res) => {
+  res.sendFile(path.join(__dirname, 'features.html'));
+});
+
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contact.html'));
+});
+
+app.get('/start', (req, res) => {
+  res.sendFile(path.join(__dirname, 'start.html'));
+});
+
+app.get('/pages', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages-index.html'));
+});
+
+app.get('/sitemap', (req, res) => {
+  res.sendFile(path.join(__dirname, 'sitemap.html'));
+});
+
 // Configure SMTP transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER || 'jb1270628@gmail.com
-',
+    user: process.env.EMAIL_USER || 'jb1270628@gmail.com',
     pass: process.env.EMAIL_PASSWORD,
   },
 });
@@ -130,10 +169,8 @@ app.post('/api/send-contact', async (req, res) => {
     `;
 
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'jb1270628@gmail.com
-',
-      to: 'jb1270628@gmail.com
-',
+      from: process.env.EMAIL_USER || 'jb1270628@gmail.com',
+      to: 'jb1270628@gmail.com',
       replyTo: from_email,
       subject: `[Sanjivani] ${subject} - from ${from_name}`,
       html: emailContent,
@@ -171,8 +208,19 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// 404 handler
+// 404 handler - try to serve HTML files
 app.use((req, res) => {
+  // Try to serve HTML file if path doesn't have an extension
+  if (!req.path.includes('.')) {
+    const filePath = path.join(__dirname, `${req.path}.html`);
+    try {
+      res.sendFile(filePath);
+      return;
+    } catch (err) {
+      // File doesn't exist, continue to 404
+    }
+  }
+  
   console.warn(`⚠️ 404 Not Found: ${req.method} ${req.path}`);
   res.status(404).json({ error: 'Route not found' });
 });
@@ -191,8 +239,7 @@ app.listen(PORT, () => {
   console.log(`\n${'='.repeat(60)}`);
   console.log(`✅ Sanjivani Backend Server Started`);
   console.log(`📍 Server running on: http://localhost:${PORT}`);
-  console.log(`📧 Email: ${process.env.EMAIL_USER || 'jb1270628@gmail.com
-'}`);
+  console.log(`📧 Email: ${process.env.EMAIL_USER || 'jb1270628@gmail.com'}`);
   console.log(`📝 Health check: http://localhost:${PORT}/api/health`);
   console.log(`${'='.repeat(60)}\n`);
 });
