@@ -288,7 +288,7 @@ function openModal(hospitalId) {
     </div>
     <div class="detail-row">
       <span class="detail-label">Status</span>
-      <span class="detail-value" style="color: ${available ? "var(--green-600)" : "var(--red-600)"}">
+      <span class="detail-value" style="color: ${available ? "#006600" : "#cc0000"}">
         ${available ? "Beds Available" : "Full"}
       </span>
     </div>

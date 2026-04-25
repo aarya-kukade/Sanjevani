@@ -7,42 +7,42 @@
   <link rel="stylesheet" href="home-styles.css" />
   <style>
     .sitemap-container {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 30px 20px;
       margin-top: 70px;
     }
 
     .sitemap-title {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 30px;
     }
 
     .sitemap-title h1 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #003366;
+      text-decoration: underline;
     }
 
     .sitemap-content {
-      background: white;
-      border-radius: 20px;
-      padding: 50px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(10, 147, 150, 0.08);
+      background-color: #ffffff;
+      padding: 25px;
+      border: 2px solid #999999;
     }
 
     .sitemap-level {
-      margin-bottom: 40px;
+      margin-bottom: 25px;
     }
 
     .sitemap-level h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
+      font-size: 18px;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #cccccc;
     }
 
     .page-tree {
@@ -54,22 +54,19 @@
     .page-item {
       display: flex;
       align-items: center;
-      padding: 12px 0;
-      gap: 15px;
+      padding: 8px 10px;
+      gap: 12px;
       border-left: 3px solid transparent;
-      padding-left: 15px;
-      transition: all 0.3s ease;
     }
 
     .page-item:hover {
-      border-left-color: var(--primary);
-      background: rgba(10, 147, 150, 0.05);
-      padding-left: 20px;
+      border-left-color: #0066cc;
+      background-color: #f0f7ff;
     }
 
     .page-icon {
-      font-size: 1.5rem;
-      min-width: 30px;
+      font-size: 18px;
+      min-width: 28px;
     }
 
     .page-info {
@@ -77,39 +74,39 @@
     }
 
     .page-name {
-      font-weight: 600;
-      color: var(--text);
+      font-weight: bold;
+      color: #000000;
       display: block;
+      font-size: 14px;
     }
 
     .page-desc {
-      font-size: 0.85rem;
-      color: var(--gray);
+      font-size: 13px;
+      color: #666666;
       display: block;
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     .page-link {
-      color: var(--primary);
+      color: #ffffff;
+      background-color: #0066cc;
       text-decoration: none;
-      font-size: 0.85rem;
-      padding: 6px 12px;
-      background: rgba(10, 147, 150, 0.1);
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      font-size: 13px;
+      padding: 4px 10px;
+      border: 1px solid #003366;
       display: inline-block;
+      font-weight: bold;
     }
 
     .page-link:hover {
-      background: rgba(10, 147, 150, 0.2);
-      text-decoration: underline;
+      background-color: #003366;
     }
 
     .subpages {
-      margin-left: 40px;
-      margin-top: 15px;
-      padding-left: 20px;
-      border-left: 2px dashed var(--border);
+      margin-left: 30px;
+      margin-top: 10px;
+      padding-left: 15px;
+      border-left: 1px dashed #999999;
       display: none;
     }
 
@@ -120,106 +117,91 @@
     .subpage-item {
       display: flex;
       align-items: center;
-      padding: 10px 0;
-      gap: 10px;
-      color: var(--gray);
-      font-size: 0.95rem;
+      padding: 6px 0;
+      gap: 8px;
+      color: #555555;
+      font-size: 14px;
     }
 
     .subpage-icon {
-      color: var(--secondary);
+      color: #0066cc;
     }
 
     .flow-diagram {
-      background: linear-gradient(135deg, #f0fffe 0%, #ffffff 100%);
-      border-radius: 15px;
-      padding: 40px;
-      margin-top: 60px;
-      border: 1px solid rgba(10, 147, 150, 0.1);
+      background-color: #f5f5f5;
+      padding: 20px;
+      margin-top: 25px;
+      border: 1px solid #999999;
     }
 
     .flow-diagram h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 25px;
-      color: var(--text);
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #003366;
     }
 
     .flow-chart {
       display: flex;
-      gap: 15px;
+      gap: 10px;
       align-items: center;
       overflow-x: auto;
-      padding: 20px 0;
+      padding: 15px 0;
     }
 
     .flow-box {
-      background: white;
-      border: 2px solid var(--primary);
-      border-radius: 10px;
-      padding: 20px;
-      min-width: 150px;
+      background-color: #ffffff;
+      border: 2px solid #0066cc;
+      padding: 12px;
+      min-width: 130px;
       text-align: center;
-      font-weight: 600;
-      color: var(--text);
+      font-weight: bold;
+      color: #003366;
       flex-shrink: 0;
+      font-size: 13px;
     }
 
     .flow-arrow {
-      font-size: 2rem;
-      color: var(--primary);
+      font-size: 22px;
+      color: #0066cc;
       flex-shrink: 0;
+      font-weight: bold;
     }
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
     }
 
     .stat-box {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-      padding: 25px;
-      border-radius: 12px;
+      background-color: #003366;
+      color: #ffffff;
+      padding: 18px;
+      border: 1px solid #001a33;
       text-align: center;
     }
 
     .stat-number {
-      font-size: 2rem;
-      font-weight: 900;
+      font-size: 24px;
+      font-weight: bold;
       display: block;
+      color: #ffff66;
     }
 
     .stat-label {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-top: 5px;
+      font-size: 13px;
+      color: #cccccc;
+      margin-top: 4px;
     }
 
     @media (max-width: 768px) {
-      .sitemap-container {
-        padding: 30px 20px;
-      }
-
-      .sitemap-content {
-        padding: 30px 20px;
-      }
-
-      .flow-chart {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .flow-arrow {
-        transform: rotate(90deg);
-        margin: 5px 0;
-      }
-
-      .subpages {
-        margin-left: 20px;
-      }
+      .sitemap-container { padding: 20px 12px; }
+      .sitemap-content { padding: 18px; }
+      .flow-chart { flex-direction: column; align-items: stretch; }
+      .flow-arrow { transform: rotate(90deg); margin: 4px 0; }
+      .subpages { margin-left: 15px; }
     }
   </style>
 </head>
@@ -513,14 +495,13 @@
     </div>
 
     <!-- Footer -->
-    <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; color: var(--gray);">
-      <p>🗺️ Complete Sanjivani Site Structure</p>
-      <p style="font-size: 0.9rem; margin-top: 10px;">
-        <a href="pages-index.html" style="color: var(--primary); text-decoration: none; margin: 0 10px;">📑 Pages Index</a> | 
-        <a href="PAGES_GUIDE.md" style="color: var(--primary); text-decoration: none; margin: 0 10px;">📖 Technical Docs</a> |
-        <a href="home.html" style="color: var(--primary); text-decoration: none; margin: 0 10px;">🏠 Home</a>
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #cccccc; text-align: center; color: #666666;">
+      <p>Complete Sanjivani Site Structure</p>
+      <p style="font-size: 13px; margin-top: 8px;">
+        <a href="pages-index.html" style="color: #0066cc; text-decoration: underline; margin: 0 8px;">Pages Index</a> |
+        <a href="home.html" style="color: #0066cc; text-decoration: underline; margin: 0 8px;">Home</a>
       </p>
-      <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.7;">
+      <p style="font-size: 12px; margin-top: 10px; color: #999999;">
         &copy; 2026 Sanjivani. All rights reserved.
       </p>
     </div>

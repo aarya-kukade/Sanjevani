@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Update active nav link based on current page
+  // Update active nav LINK
   updateActiveNavLink();
 });
 
@@ -115,7 +115,7 @@ function updateActiveNavLink() {
     link.classList.remove('active');
     const href = link.getAttribute('href');
     
-    // Match current page with nav link
+    // Match NAV LINK
     if (href && (
       (currentPage === '' && href.includes('home.html')) ||
       currentPage === href.split('/').pop()
